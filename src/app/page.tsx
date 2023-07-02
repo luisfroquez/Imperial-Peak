@@ -1,95 +1,64 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+'use client';
+
+import TextUpdown from '@/components/animations/text-updown/TextUpdown';
+import Logo from '@/components/ui/Logo';
+import {Box, Center, Text, VStack} from '@chakra-ui/react';
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+    <main>
+      <VStack
+        w="100vw"
+        h="100vh"
+        justifyContent="space-between"
+        pos="relative"
+        bg="blue.900"
+        p={4}
+      >
+        <Center h="20%" pos="relative" zIndex={3}>
+          <Logo boxSize={16} />
+        </Center>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+        <TextUpdown
+          textProps={{
+            fontWeight: 400,
+            fontSize: 40,
+            letterSpacing: 20,
+            color: 'blue.50',
+            marginRight: '-20px',
+          }}
+          pos="relative"
+          zIndex={2}
+          // marginTop={-16}
+          // maxH={'60%'}
+          textArray={['EXPLORA', 'CONECTA', 'ALCANZA']}
         />
-      </div>
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+        <Center h="20%" pos="relative" zIndex={3}>
+          <Text fontWeight="light" color="blue.100" fontSize="xs">
+            Coming soon...
+          </Text>
+        </Center>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+        <Box
+          pos="absolute"
+          w="100%"
+          h="100%"
+          zIndex={2}
+          bgImg={'url("./img/bg-mountain.png")'}
+          bgSize="cover"
+          bgPos="bottom"
+        />
+        <Box
+          pos="absolute"
+          w="100%"
+          h="100%"
+          zIndex={1}
+          bgImg={'url("./img/bg-mountain-light.png")'}
+          bgSize="cover"
+          bgPos="bottom"
+        />
+      </VStack>
     </main>
-  )
+  );
 }
