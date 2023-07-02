@@ -10,10 +10,11 @@ export default function Home() {
       <VStack
         w="100vw"
         h="100vh"
+        overflow="hidden"
         justifyContent="space-between"
         pos="relative"
         bg="blue.900"
-        p={4}
+        p={{base: 4, md: 8}}
       >
         <Center h="20%" pos="relative" zIndex={3}>
           <Logo boxSize={16} />
@@ -22,7 +23,7 @@ export default function Home() {
         <TextUpdown
           textProps={{
             fontWeight: 400,
-            fontSize: 40,
+            fontSize: {base: 40, md: 72},
             letterSpacing: 20,
             color: 'blue.50',
             marginRight: '-20px',
@@ -47,7 +48,7 @@ export default function Home() {
           zIndex={2}
           bgImg={'url("./img/bg-mountain.png")'}
           bgSize="cover"
-          bgPos="bottom"
+          bgPos="top"
         />
         <Box
           pos="absolute"
@@ -56,7 +57,7 @@ export default function Home() {
           zIndex={1}
           bgImg={'url("./img/bg-mountain-light.png")'}
           bgSize="cover"
-          bgPos="bottom"
+          bgPos="top"
         />
       </VStack>
     </main>
